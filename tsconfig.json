@@ -1,10 +1,10 @@
 // ... existing tsconfig.json ...
 {
     "compilerOptions": {
-        // ... existing options ...
         "module": "NodeNext",
-        "moduleResolution": "NodeNext"
-        // ... existing options ...
+        "moduleResolution": "NodeNext",
+        "rootDir": "./src",
+        "outDir": "./dist",
     }
 }
 // ... existing tsconfig.json ...

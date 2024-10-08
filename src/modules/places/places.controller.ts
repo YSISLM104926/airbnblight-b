@@ -1,12 +1,10 @@
 import { Request, Response } from 'express'
-import placesValidationSchema from '../validation/places.validation';
-import { PlacesServices } from '../services/places.services';
+import { PlacesServices } from './places.services';
 
 
 const createPlacesController = async (req: Request, res: Response) => {
-    console.log('Received data:', req.body); // Log to check received data
+    console.log('Received data:', req.body);
     try {
-        // const validationPlaces = placesValidationSchema.parse(req.body);
         const result = await PlacesServices.createPlacesService(req.body);
         res.status(201).send({
             success: true,
@@ -14,7 +12,7 @@ const createPlacesController = async (req: Request, res: Response) => {
             data: result
         });
     } catch (error) {
-        console.error("Validation Error: ", error); // Log the actual error
+        console.error("Validation Error: ", error); 
         res.status(500).send({
             success: false,
             message: 'Something went wrong!',

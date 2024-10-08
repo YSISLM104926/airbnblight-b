@@ -1,6 +1,6 @@
 import express from 'express'
+import { placesController } from './places.controller';
 const router = express.Router();
-const { placesController } = require('../controllers/places.controller')
 
 router.post('/places-post', placesController.createPlacesController)
 router.get('/places', placesController.getPlacesController)

@@ -1,15 +1,6 @@
 import mongoose, { Schema, Document } from 'mongoose';
-import IPlaces from '../interface/places.interface';
+import IPlaces from './places.interface';
 
-// Define the Image schema
-const imageSchema = new Schema({
-    url: {
-        type: String,
-        required: true
-    }
-});
-
-// Define the Location schema
 const locationSchema = new Schema({
     title: {
         type: String,
@@ -29,23 +20,21 @@ const locationSchema = new Schema({
     },
     images: [
         {
-            type: String, // Assuming the images are stored as URLs (strings)
+            type: String, 
             required: true
         }
     ]
 });
 
-// Define the main Places schema
+
 const placesSchema = new Schema({
     tag: {
         type: String,
         required: true,
-        maxlength: 10  // Assuming 'tag' has a maximum length of 10 characters as in your validation schema
+        maxlength: 10
     },
-    locations: [locationSchema]  // An array of locations
+    locations: [locationSchema]  
 });
 
-// Create the Places model
 const Places = mongoose.model('Places', placesSchema) as mongoose.Model<IPlaces>;
-
 export default Places;

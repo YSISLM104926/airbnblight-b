@@ -1,5 +1,6 @@
-import IPlaces from "../interface/places.interface";
-import Places from "../models/places.models";
+import IPlaces from "./places.interface";
+import Places from "./places.model";
+
 
 const createPlacesService = async (data: IPlaces) => {
     try {

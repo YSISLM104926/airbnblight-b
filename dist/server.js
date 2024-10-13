@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const cors_1 = __importDefault(require("cors"));
 const port = process.env.PORT || 5000;
-const placesRoutes = require("../routes/places.routes");
+const placesRoutes = require("./modules/places/places.route");
 require('./index');
 // parser
 app.use((0, cors_1.default)());

@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from 'mongoose';
-import IPlaces from './places.interface';
+import IPlaces, { IProductsMethods, ProductModel } from './places.interface';
 
 const locationSchema = new Schema({
     title: {
@@ -27,7 +27,7 @@ const locationSchema = new Schema({
 });
 
 
-const placesSchema = new Schema({
+const placesSchema = new Schema<IPlaces, ProductModel, IProductsMethods>({
     tag: {
         type: String,
         required: true,
@@ -35,6 +35,8 @@ const placesSchema = new Schema({
     },
     locations: [locationSchema]  
 });
+
+// placesSchema.me
 
 const Places = mongoose.model('Places', placesSchema) as mongoose.Model<IPlaces>;
 export default Places;

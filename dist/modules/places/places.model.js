@@ -56,5 +56,6 @@ const placesSchema = new mongoose_1.Schema({
     },
     locations: [locationSchema]
 });
+// placesSchema.me
 const Places = mongoose_1.default.model('Places', placesSchema);
 exports.default = Places;

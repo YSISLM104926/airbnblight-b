@@ -1,3 +1,5 @@
+import { Model } from "mongoose";
+
 interface ILocation {
     title: string;
     distance: number;  
@@ -6,9 +8,15 @@ interface ILocation {
     images: string[];
 }
 
-interface IPlaces {
+export interface IPlaces {
     tag: string;
     locations: ILocation[];
 }
+
+export interface IProductsMethods {
+     isProductExist(): string;
+}
+
+export type ProductModel = Model<IPlaces, {}, IProductsMethods>;
 
 export default IPlaces;
